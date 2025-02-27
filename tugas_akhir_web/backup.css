@@ -1,0 +1,206 @@
+/* ======= RESET GAYA DASAR ======= */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+/* ======= HEADER & NAVIGATION ======= */
+header {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.logo p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #444;
+    border-radius: 5px;
+}
+
+/* ======= SLIDESHOW DAN ARTIKEL SEJAJAR ======= */
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Jarak antara slideshow dan artikel */
+    padding: 20px;
+}
+
+/* SLIDESHOW */
+.slideshow-container {
+    position: relative;
+    width: 800px;  /* Lebar tetap */
+    height: 500px; /* Tinggi tetap */
+    margin: auto;  /* Agar berada di tengah */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+/* Gambar dalam Slideshow */
+.slide img {
+    width: 800px;  /* Lebar tetap */
+    height: 500px; /* Tinggi tetap */
+    object-fit: cover; /* Memastikan gambar tidak terdistorsi */
+    border-radius: 10px;
+}
+
+
+.slide {
+    display: none;
+    animation: fade 1.5s ease-in-out;
+}
+
+/* .slide img {
+    width: 100%;
+    border-radius: 10px;
+} */
+
+@keyframes fade {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+
+/* ARTIKEL */
+.article-container {
+    width: 50%;
+    max-width: 500px;
+    text-align: left;
+}
+
+article {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+article h3 {
+    color: #222;
+}
+
+article p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* ======= KATALOG PRODUK ======= */
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.product {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+.product img {
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* ======= FOOTER ======= */
+footer {
+    background-color: #222;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* ======= RESPONSIVE DESIGN ======= */
+@media (max-width: 1024px) {
+    .product-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .home-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .slideshow-container, 
+    .article-container {
+        width: 100%;
+        max-width: none;
+    }
+
+    .product-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

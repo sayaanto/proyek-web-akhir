@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Casual</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <div class="logo">
+            <h1>Space Casual</h1>
+            <p>Spirit Casual, Gaya Hooligan</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#products">Koleksi</a></li>
+                <li><a href="#about">Tentang Kami</a></li>
+                <li><a href="#contact">Kontak</a></li>
+                <li><a href="#" onclick="openPopup()">Profil</a></li>
+            </ul>
+        </nav>
+
+        <!-- Popup Profil -->
+        <div class="overlay" id="overlay" onclick="closePopup()"></div>
+        <div class="popup" id="popup">
+            <img src="image/profile3.jpg" alt="Foto Profil">
+            <h2>Suprianto</h2>
+            <p>Mahasiswa Teknik Informatika | Space Casual Founder</p>
+            <button onclick="closePopup()">Tutup</button>
+        </div>
+
+        <!-- JavaScript pop up  -->
+        <script>
+            function openPopup() {
+                document.getElementById("popup").style.display = "block";
+                document.getElementById("overlay").style.display = "block";
+            }
+
+            function closePopup() {
+                document.getElementById("popup").style.display = "none";
+                document.getElementById("overlay").style.display = "none";
+            }
+        </script>
+    </header>
+
+
+
+    <section id="home">
+        <h2>Gaya Casual & Supporter Outfit</h2>
+
+        <div class="home-container">
+            <!-- SLIDESHOW / CAROUSEL -->
+            <div class="slideshow-container">
+                <div class="slide fade">
+                    <img src="image/ultras5.jpg" alt="Supporter Outfit 1">
+                </div>
+                <div class="slide fade">
+                    <img src="image/ultras1.jpg" alt="Supporter Outfit 2">
+                </div>
+                <div class="slide fade">
+                    <img src="image/ultras3.jpg" alt="Supporter Outfit 3">
+                </div>
+            </div>
+
+            <!-- ARTIKEL -->
+            <div class="article-container">
+                <article>
+                    <h3>Apa Itu Casual Style?</h3>
+                    <p>Casual style adalah gaya berpakaian yang berasal dari subkultur hooligan sepak bola di Eropa,
+                        terutama di Inggris. Gaya ini mengutamakan pakaian berkualitas tinggi dari brand premium seperti
+                        Stone Island, CP Company, dan Adidas Spezial.</p>
+                </article>
+
+                <article>
+                    <h3>Supporter Fashion di Indonesia</h3>
+                    <p>Di Indonesia, tren casual style mulai berkembang di kalangan supporter sepak bola. Banyak yang mengadopsi gaya ini dengan mengenakan outfit eksklusif saat mendukung tim favorit di tribun.</p>
+                    <aside>
+                        <img src="image/ultras4.jpg" alt="Supporter Fashion Indonesia" width="300">
+                        <p>Contoh gaya casual supporter di Indonesia.</p>
+                    </aside>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let slideIndex = 0;
+
+        function showSlides() {
+            let slides = document.querySelectorAll(".slide");
+
+            // Sembunyikan semua slide
+            slides.forEach(slide => slide.style.display = "none");
+
+            // Increment index
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+
+            // Tampilkan slide saat ini
+            slides[slideIndex - 1].style.display = "block";
+
+            // Ulangi setiap 3 detik
+            setTimeout(showSlides, 3000);
+        }
+
+        // Jalankan saat halaman dimuat
+        document.addEventListener("DOMContentLoaded", showSlides);
+    </script>
+
+    <!-- KATALOG PRODUK -->
+    <section id="products">
+        <h2>Katalog Produk</h2>
+        <div class="product-container">
+            <div class="product">
+                <img src="image/produk1.jpg" alt="Hoodie Stone Island">
+                <h3>Hoodie Stone Island</h3>
+                <p>Hoodie premium dengan patch khas Stone Island.</p>
+            </div>
+
+            <div class="product">
+                <img src="image/produk2.jpg" alt="Adidas Samba">
+                <h3>Adidas Samba</h3>
+                <p>Sepatu klasik yang tak lekang oleh waktu.</p>
+            </div>
+
+            <div class="product">
+                <img src="image/produk3.jpg" alt="Jaket Fred Perry">
+                <h3>Jaket Fred Perry</h3>
+                <p>Jaket bomber eksklusif Fred Perry.</p>
+            </div>
+
+            <div class="product">
+                <img src="image/produk4.jpg" alt="Topi Stone Island">
+                <h3>Topi Stone Island</h3>
+                <p>Topi casual dengan logo Stone Island.</p>
+            </div>
+
+            <div class="product">
+                <img src="image/produk5.jpg" alt="Jaket MA.STRUM">
+                <h3>Jaket MA.STRUM</h3>
+                <p>Jaket stylish dengan kualitas premium.</p>
+            </div>
+
+            <div class="product">
+                <img src="image/produk6.jpg" alt="Scarf Ultras">
+                <h3>Scarf Ultras</h3>
+                <p>Scarf khusus supporter di tribun stadion.</p>
+            </div>
+
+            <div class="product">
+                <img src="image/produk7.jpg" alt="Clarks Wallabee">
+                <h3>Clarks Wallabee</h3>
+                <p>Sepatu klasik yang sering dipakai supporter casual.</p>
+            </div>
+
+            <div class="product">
+                <img src="image/produk8.jpg" alt="Hoodie CP Company">
+                <h3>Hoodie CP Company</h3>
+                <p>Hoodie unik dengan goggles khas CP Company.</p>
+            </div>
+
+            <div class="product">
+                <img src="image/produk10.jpg" alt="Jaket Denim">
+                <h3>Jaket Denim</h3>
+                <p>Jaket denim berkualitas tinggi, gaya casual hooligan.</p>
+            </div>
+
+            <div class="product">
+                <img src="image/produk11.jpg" alt="Adidas Spezial">
+                <h3>Adidas Spezial</h3>
+                <p>Sepatu Adidas favorit supporter casual.</p>
+            </div>
+
+            <div class="product">
+                <img src="image/produk12.jpg" alt="Kaos Polo Mod Style">
+                <h3>Kaos Polo Mod Style</h3>
+                <p>Kaos polo dengan desain klasik khas supporter Eropa.</p>
+            </div>
+
+            <div class="product">
+                <img src="image/produk13.jpg" alt="Sweater Casual">
+                <h3>Sweater Casual</h3>
+                <p>Sweater stylish yang cocok untuk gaya casual.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TENTANG KAMI -->
+    <section id="about">
+        <h2>Tentang Kami</h2>
+        <p>Space Casual bisa menjadi representasi dari gaya casual supporter yang elegan dan berkualitas tinggi,
+            menggabungkan elemen streetwear dengan sentuhan khas budaya suporter.
+        </p>
+    </section>
+
+    <!-- KONTAK -->
+    <section id="contact">
+        <h2>Kontak Kami</h2>
+        <p>WhatsApp: <a href="https://wa.me/6285895355726" target="_blank">Klik Hubungi Admin</a></p>
+        <p>Instagram: <a href="https://www.instagram.com/spacecasual_/" target="_blank">@spacecasual</a></p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 Space Casual. Semua hak dilindungi.</p>
+    </footer>
+
+</body>
+
+</html>
